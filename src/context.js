@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import useFetch from "./useFetch";
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
-  const [query, setQuery] = useState("love");
+  const [query, setQuery] = useState("thriller");
   const { isLoading, isError, movie } = useFetch({ query });
   // console.log("re-render");
   return (

@@ -4,9 +4,9 @@ import useFetch from "./useFetch";
 const SingleMovie = () => {
   const { id } = useParams();
   console.log(id);
-
-  const { isLoading, movie } = useFetch(`&i=${id}`);
-
+   
+  const { isLoading, movie } = useFetch({query:`${id}`,Byid:true});
+  console.log(movie)
   if (isLoading) {
     return (
       <section className="movie-section ">

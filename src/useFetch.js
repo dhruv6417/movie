@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 export const API_URL = `https://www.omdbapi.com/?&apikey=27dea6e0`;
 
 const useFetch = (apiParams) => {
-  // console.log(apiParams.query);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState({ show: "false", msg: "" });
   const [movie, setMovie] = useState(null);
@@ -31,6 +30,7 @@ const useFetch = (apiParams) => {
   // debouncing in react js
   useEffect(() => {
     let timeOut = setTimeout(() => {
+      apiParams.Byid?getMovie(`${API_URL}&i=${apiParams.query}`):
       getMovie(`${API_URL}&s=${apiParams.query}`);
     }, 1000);
     // console.log("set");
